@@ -17,14 +17,13 @@ Both potions are **drunk** from the item menu (like other ingestible drugs).
 
 ## Toxicity
 
-Every dose applies **toxic buildup** — the same hediff pawns get from toxic fallout — scaled by the drinker's **toxic resistance** stat:
+Witcher potions are mutagenic poison. Whether they help or kill depends entirely on the drinker's **toxic resistance** stat:
 
-- Normal colonists (0% resistance) take a full lethal dose: **a single potion drives them to 100% toxic buildup and kills them.**
-- Witcher Base adds graduated witcher toxin tolerance genes: initiates take 60% buildup per dose, trained witchers take 40%, master witchers take 25%, and mutated witchers take 15%.
-- Enough rapid potion use can still kill any witcher tier. A master witcher can handle several doses, while a mutated witcher can drink many more, but neither is fully immune.
-- Other toxin-resistance sources also help because the potion uses RimWorld's vanilla `ToxicResistance` stat.
+- **Ordinary humans** (no toxin tolerance) cannot survive them. Drinking **any** witcher potion inflicts *witcher toxins* — a fatal poisoning that worsens over roughly **one in-game day** until the pawn dies. There is no cure.
+- **Witchers** (Witcher Base's toxin-tolerance genes, or any other source of toxic resistance) can drink safely. Instead of poisoning them, potions add ordinary **toxic buildup**, scaled down by their resistance. Just like in the games, downing too many in a row will eventually **knock a witcher unconscious** — but it will never kill them. They sleep it off as the buildup decays.
+- Higher witcher tiers shrug off more before fainting: an initiate gets woozy after a few quick doses, while a mutated witcher can drink many.
 
-There is no addiction or chemical dependency — only the immediate toxic cost. Toxic buildup decays slowly (~8%/day) once a pawn stops drinking.
+There is no addiction or chemical dependency. A witcher's toxic buildup decays slowly (~8%/day) once they stop drinking.
 
 ## Compatibility
 

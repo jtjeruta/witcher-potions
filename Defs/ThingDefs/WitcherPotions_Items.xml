@@ -55,7 +55,7 @@
           <severity>1.0</severity>
         </li>
         <li Class="WitcherPotions.IngestionOutcomeDoer_ToxicByResistance">
-          <toxicAmount>1.0</toxicAmount>
+          <toxicAmount>0.6</toxicAmount>
         </li>
       </outcomeDoers>
     </ingestible>
@@ -79,7 +79,7 @@
           <severity>1.0</severity>
         </li>
         <li Class="WitcherPotions.IngestionOutcomeDoer_ToxicByResistance">
-          <toxicAmount>1.0</toxicAmount>
+          <toxicAmount>0.6</toxicAmount>
         </li>
       </outcomeDoers>
     </ingestible>

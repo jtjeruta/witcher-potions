@@ -66,4 +66,84 @@
     </stages>
   </HediffDef>
 
+  <!--
+    Lethal poisoning for ordinary humans who drink a witcher potion. Without a
+    witcher's hardened physiology the mutagenic toxins are fatal: severityPerDay
+    ramps the hediff to its lethalSeverity over roughly one in-game day, at which
+    point the pawn dies. There is no cure. Witchers never receive this - they only
+    accrue ordinary (non-lethal) toxic buildup instead.
+  -->
+  <HediffDef>
+    <defName>WitcherPotion_Toxin</defName>
+    <label>witcher toxins</label>
+    <labelNoun>witcher toxins</labelNoun>
+    <description>An ordinary body cannot process the mutagenic toxins in a witcher potion. They are spreading through the bloodstream and, without a witcher's hardened physiology, will prove fatal within a day.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.55, 0.75, 0.25)</defaultLabelColor>
+    <isBad>true</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <lethalSeverity>1.0</lethalSeverity>
+    <initialSeverity>0.001</initialSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <tendable>false</tendable>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>1.0</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>spreading</label>
+        <painOffset>0.10</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.35</minSeverity>
+        <label>toxic shock</label>
+        <painOffset>0.30</painOffset>
+        <vomitMtbDays>0.4</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.30</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.70</minSeverity>
+        <label>dying</label>
+        <lifeThreatening>true</lifeThreatening>
+        <painOffset>0.60</painOffset>
+        <vomitMtbDays>0.25</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.50</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.50</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>-0.20</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
 </Defs>
