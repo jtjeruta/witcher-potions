@@ -46,7 +46,7 @@
     </graphicData>
     <costList>
       <MedicineHerbal>4</MedicineHerbal>
-      <Neutroamine>2</Neutroamine>
+      <PsychoidLeaves>8</PsychoidLeaves>
     </costList>
     <ingestible>
       <outcomeDoers>
@@ -69,8 +69,8 @@
       <texPath>Things/Item/WitcherPotion_Thunderbolt</texPath>
     </graphicData>
     <costList>
-      <PsychoidLeaves>6</PsychoidLeaves>
-      <Neutroamine>2</Neutroamine>
+      <PsychoidLeaves>12</PsychoidLeaves>
+      <SmokeleafLeaves>6</SmokeleafLeaves>
     </costList>
     <ingestible>
       <outcomeDoers>
@@ -81,6 +81,24 @@
         <li Class="WitcherPotions.IngestionOutcomeDoer_ToxicByResistance">
           <toxicAmount>0.6</toxicAmount>
         </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="WitcherPotionBase">
+    <defName>WitcherPotion_WhiteHoney</defName>
+    <label>white honey</label>
+    <description>An orange witcher elixir that instantly flushes every trace of toxicity from the bloodstream, letting a witcher reset and drink fresh potions. To an ordinary human it is just another mutagenic poison - lethal all the same.</description>
+    <graphicData>
+      <texPath>Things/Item/WitcherPotion_WhiteHoney</texPath>
+    </graphicData>
+    <costList>
+      <InsectJelly>5</InsectJelly>
+      <PsychoidLeaves>6</PsychoidLeaves>
+    </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="WitcherPotions.IngestionOutcomeDoer_WhiteHoney" />
       </outcomeDoers>
     </ingestible>
   </ThingDef>

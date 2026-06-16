@@ -11,6 +11,7 @@ namespace WitcherPotions
         public static HediffDef WitcherPotion_Toxin;
         public static ThingDef WitcherPotion_Swallow;
         public static ThingDef WitcherPotion_Thunderbolt;
+        public static ThingDef WitcherPotion_WhiteHoney;
         public static ResearchProjectDef Witcher_Alchemy;
 
         static WitcherPotionsDefOf()

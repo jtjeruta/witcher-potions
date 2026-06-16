@@ -4,7 +4,7 @@ Internal documentation for contributors. **Spoils gameplay mechanics** — keep 
 
 ## Core design
 
-Two craftable ingestible drugs apply a beneficial hediff plus a toxicity effect that depends on the drinker's vanilla `ToxicResistance` stat — no hard dependency on Witcher Base. Toxin-hardened drinkers (witchers) can use potions; ordinary humans are poisoned to death.
+Three craftable ingestible drugs branch on the drinker's vanilla `ToxicResistance` stat — no hard dependency on Witcher Base. Toxin-hardened drinkers (witchers) can use potions; ordinary humans are poisoned to death. Swallow/Thunderbolt apply a beneficial hediff plus capped toxic buildup; White Honey instead *clears* a witcher's toxicity (and still kills humans).
 
 Weapon oils / blade coatings are **deferred** (phase 2). They need a custom weapon comp and are not an Anomaly DLC feature.
 
@@ -32,6 +32,13 @@ Toxic buildup recovers at the vanilla rate (~8%/day) once no new toxicity is add
 
 There is intentionally no custom "is this pawn a witcher?" check — `ToxicResistance` is the universal in-game gauge for "can handle toxins," shared with toxic fallout, venom, and poisoned weapons. Any high-tox-resistance source (detoxifier kidney, tox gene, etc.) also clears the bar.
 
+### White Honey
+
+`IngestionOutcomeDoer_WhiteHoney` uses the same `safeToxicResistance` split:
+
+- **Witcher** (`>= 0.35`): removes the `ToxicBuildup` hediff entirely (and `WitcherPotion_Toxin` if somehow present), resetting toxicity to zero so they can immediately drink more potions. No beneficial hediff is applied — the purge *is* the effect.
+- **Ordinary human** (`< 0.35`): identical to the other potions — applies the lethal `WitcherPotion_Toxin` hediff. White honey does not cure a poisoned human; it poisons them too.
+
 ## Hediffs
 
 | Hediff | Duration | Behavior |
@@ -52,7 +59,7 @@ Defs/
   HediffDefs/          Buff / heal hediffs
   ResearchProjectDefs/ Witcher Alchemy research
 Source/
-  WitcherPotions/      Ingestion doer, heal comp, DefOf
+  WitcherPotions/      Ingestion doers (toxicity / white honey), heal comp, DefOf
   build.sh             Offline build script
 Textures/Things/Item/  Potion bottle icons
 LoadFolders.xml
