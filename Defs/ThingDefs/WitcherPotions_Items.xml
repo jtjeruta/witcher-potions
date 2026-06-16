@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef Name="WitcherPotionBase" ParentName="MakeableDrugBase" Abstract="True">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.88</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <stackLimit>25</stackLimit>
+    <statBases>
+      <MarketValue>42</MarketValue>
+      <Mass>0.08</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <foodType>Processed, Fluid</foodType>
+      <baseIngestTicks>120</baseIngestTicks>
+      <chairSearchRadius>0</chairSearchRadius>
+      <drugCategory>Medical</drugCategory>
+      <ingestSound>Ingest_Drink</ingestSound>
+      <ingestCommandString>Drink {0}</ingestCommandString>
+      <ingestReportString>Drinking {0}.</ingestReportString>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>Witcher_Alchemy</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="WitcherPotionBase">
+    <defName>WitcherPotion_Swallow</defName>
+    <label>swallow</label>
+    <description>A thick green witcher draught that accelerates healing and staunches bleeding. The mutagenic reagents are violently toxic to anyone without strong poison resistance.</description>
+    <graphicData>
+      <texPath>Things/Item/WitcherPotion_Swallow</texPath>
+    </graphicData>
+    <costList>
+      <MedicineHerbal>4</MedicineHerbal>
+      <Neutroamine>2</Neutroamine>
+    </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WitcherPotion_SwallowHediff</hediffDef>
+          <severity>1.0</severity>
+        </li>
+        <li Class="WitcherPotions.IngestionOutcomeDoer_ToxicByResistance">
+          <toxicAmount>1.0</toxicAmount>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="WitcherPotionBase">
+    <defName>WitcherPotion_Thunderbolt</defName>
+    <label>thunderbolt</label>
+    <description>A glowing yellow combat tonic that heightens reflexes, aim, and striking power. The brew is lethal poison to ordinary humans; only the toxin-hardened can drink it and live.</description>
+    <graphicData>
+      <texPath>Things/Item/WitcherPotion_Thunderbolt</texPath>
+    </graphicData>
+    <costList>
+      <PsychoidLeaves>6</PsychoidLeaves>
+      <Neutroamine>2</Neutroamine>
+    </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WitcherPotion_ThunderboltHediff</hediffDef>
+          <severity>1.0</severity>
+        </li>
+        <li Class="WitcherPotions.IngestionOutcomeDoer_ToxicByResistance">
+          <toxicAmount>1.0</toxicAmount>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+</Defs>
