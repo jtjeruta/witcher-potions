@@ -3,7 +3,7 @@
   <name>Witcher Potions</name>
   <packageId>witcher.potions</packageId>
   <author>Tristan</author>
-  <url></url>
+  <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3749658050</url>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -14,6 +14,8 @@ These brews are toxic to ordinary humans. Only those with strong natural or muta
     <li>
       <packageId>witcher.base</packageId>
       <displayName>Witcher Base</displayName>
+      <downloadUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3749657575</downloadUrl>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3749657575</steamWorkshopUrl>
     </li>
   </modDependencies>
   <loadAfter>
