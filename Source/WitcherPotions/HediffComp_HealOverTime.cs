@@ -1,4 +1,5 @@
 using System.Linq;
+using RimWorld;
 using Verse;
 
 namespace WitcherPotions
@@ -13,6 +14,7 @@ namespace WitcherPotions
         {
             base.CompPostMake();
             ticksUntilHeal = Props.ticksInterval;
+            TryAutoTendInjuries(parent.pawn);
         }
 
         public override void CompPostTick(ref float severityAdjustment)
@@ -32,7 +34,28 @@ namespace WitcherPotions
             }
 
             ticksUntilHeal = Props.ticksInterval;
+            TryAutoTendInjuries(pawn);
             TryHeal(pawn);
+        }
+
+        private void TryAutoTendInjuries(Pawn pawn)
+        {
+            if (pawn == null || pawn.Dead)
+            {
+                return;
+            }
+
+            int batch = 0;
+            foreach (Hediff_Injury injury in pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>())
+            {
+                if (!injury.TendableNow(true))
+                {
+                    continue;
+                }
+
+                float q = TendUtility.CalculateBaseTendQuality(pawn, pawn, 1f, 1f);
+                injury.Tended(q, q, batch++);
+            }
         }
 
         private void TryHeal(Pawn pawn)

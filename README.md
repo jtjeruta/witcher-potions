@@ -10,7 +10,7 @@ Research **witcher alchemy**, then brew three potions at a **drug lab**:
 
 | Potion | Effect | Ingredients |
 |--------|--------|-------------|
-| **Swallow** (green) | Heals injuries over time (~3 hours); prioritizes bleeding wounds | 4 herbal medicine, 8 psychoid leaves |
+| **Swallow** (green) | Heals injuries over time (~3 hours); auto-tends wounds; prioritizes bleeding wounds | 4 herbal medicine, 8 psychoid leaves |
 | **Thunderbolt** (yellow) | +30% melee damage, +4 hit chance, +4 shooting accuracy, faster aim (~2 hours) | 12 psychoid leaves, 6 smokeleaf leaves |
 | **White Honey** (orange) | Instantly purges all toxicity from a witcher, letting them reset and keep drinking | 5 insect jelly, 6 psychoid leaves |
 

@@ -43,11 +43,11 @@ There is intentionally no custom "is this pawn a witcher?" check — `ToxicResis
 
 | Hediff | Duration | Behavior |
 |--------|----------|----------|
-| `WitcherPotion_SwallowHediff` (swallow, green) | 7500 ticks (~3 h) | `HediffComp_HealOverTime` every 120 ticks: heals 0.6 severity on worst injury, bleeding wounds first |
+| `WitcherPotion_SwallowHediff` (swallow, green) | 7500 ticks (~3 h) | `HediffComp_HealOverTime` on apply + every 120 ticks: auto-tends all injuries (self-tend quality, no medicine); heals 0.6 severity on worst injury, bleeding wounds first |
 | `WitcherPotion_ThunderboltHediff` (thunderbolt, yellow) | 5000 ticks (~2 h) | Stat buffs only (no custom C#) |
 | `WitcherPotion_Toxin` (lethal, humans only) | ~1 in-game day to death | Vanilla `HediffComp_SeverityPerDay` (1.0/day) ramps to `lethalSeverity = 1.0`; staged decline (spreading → toxic shock → dying), no cure |
 
-`HediffComp_HealOverTime` cannot assign `Hediff.Bleeding` (read-only in 1.6). Bleeding is mitigated indirectly by prioritizing bleeding injuries for severity reduction.
+`HediffComp_HealOverTime` auto-tends all `Hediff_Injury` wounds while Swallow is active (immediate on drink, then each heal tick). Tend quality uses self-tend via `TendUtility.CalculateBaseTendQuality` — no colonist job or medicine required. Infections and other non-injury tendables are unaffected.
 
 ## Repository layout
 
