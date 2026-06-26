@@ -9,6 +9,7 @@
     <rotatable>false</rotatable>
     <stackLimit>25</stackLimit>
     <statBases>
+      <WorkToMake>900</WorkToMake>
       <MarketValue>42</MarketValue>
       <Mass>0.08</Mass>
       <Flammability>0.5</Flammability>
@@ -29,6 +30,7 @@
       <recipeUsers>
         <li>DrugLab</li>
       </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
     </recipeMaker>
     <comps>
       <li Class="CompProperties_Drug">

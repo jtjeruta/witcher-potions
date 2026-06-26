@@ -89,6 +89,7 @@ Symlink the repo into RimWorld's `Mods/` folder (`Mods/WitcherPotions`) so XML a
 
 ## Tuning knobs
 
+- `WorkToMake` on `WitcherPotionBase` (900 — matches Wake-up; drives Drug Lab recipe work time)
 - `toxicAmount` / `safeToxicResistance` / `witcherToxicCeiling` in ThingDef outcome doers
 - `severityPerDay` on `WitcherPotion_Toxin` (1.0 = ~1 day to death)
 - `disappearsAfterTicks` on hediff comps
