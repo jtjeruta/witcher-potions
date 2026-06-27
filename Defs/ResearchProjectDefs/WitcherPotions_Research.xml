@@ -9,10 +9,11 @@
     <baseCost>400</baseCost>
     <tab>Witcher</tab>
     <prerequisites>
+      <li>Witcher_Traditions</li>
       <li>DrugProduction</li>
     </prerequisites>
-    <researchViewX>4.80</researchViewX>
-    <researchViewY>0.00</researchViewY>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>1.50</researchViewY>
   </ResearchProjectDef>
 
 </Defs>

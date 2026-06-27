@@ -6,7 +6,7 @@ Brew and drink witcher potions in **RimWorld**. This companion mod to the Witche
 
 ## What it does
 
-Research **witcher alchemy**, then brew three potions at a **drug lab**:
+Research **witcher traditions** in [Witcher Base](../witcher), then **witcher alchemy** (also requires vanilla **drug production**), and brew three potions at a **drug lab**:
 
 | Potion | Effect | Ingredients |
 |--------|--------|-------------|

@@ -84,7 +84,7 @@ Symlink the repo into RimWorld's `Mods/` folder (`Mods/WitcherPotions`) so XML a
 - Vanilla drug textures live in asset bundles — ship custom `texPath` icons under `Textures/`.
 - Use `Graphic_Single` for a single icon file. `Graphic_StackCount`/`Graphic_Random` are `Graphic_Collection` types that scan a *folder* of textures and throw "Collection cannot init: No textures found at path" when pointed at one file.
 - Icons should be square RGBA with a transparent background; an opaque RGB image renders as a solid rectangle.
-- `ParentName="MakeableDrugBase"` for craftable drugs; it auto-generates a `Make_<defName>` recipe from the ThingDef `costList` and its inherited `recipeMaker`. Do NOT also declare an explicit `Make_<defName>` RecipeDef (duplicate def error), and do provide a `costList` (else "has a recipeMaker but no costList or costStuffCount"). Gate the recipe by adding `<recipeMaker><researchPrerequisite>...</researchPrerequisite></recipeMaker>`.
+- `ParentName="MakeableDrugBase"` for craftable drugs; it auto-generates a `Make_<defName>` recipe from the ThingDef `costList` and its inherited `recipeMaker`. Do NOT also declare an explicit `Make_<defName>` RecipeDef (duplicate def error), and do provide a `costList` (else "has a recipeMaker but no costList or costStuffCount"). Gate the recipe by adding `<recipeMaker><researchPrerequisite>...</researchPrerequisite></recipeMaker>`. **Witcher Alchemy** requires **`Witcher_Traditions`** (Witcher Base) plus vanilla **Drug production**.
 - `CompProperties_Drug` with no chemical keeps them non-addictive.
 
 ## Tuning knobs
