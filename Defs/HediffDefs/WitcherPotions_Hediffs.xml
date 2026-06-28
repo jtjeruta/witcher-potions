@@ -66,6 +66,26 @@
     </stages>
   </HediffDef>
 
+  <HediffDef>
+    <defName>WitcherPotion_BlackBloodHediff</defName>
+    <label>black blood</label>
+    <description>Mutagenic toxins saturate the bloodstream. Revenant hypnosis cannot bind to a mind so poisoned, and anything that wounds the drinker risks the taint.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.45, 0.08, 0.08)</defaultLabelColor>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>15000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painOffset>0.10</painOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
   <!--
     Lethal poisoning for ordinary humans who drink a witcher potion. Without a
     witcher's hardened physiology the mutagenic toxins are fatal: severityPerDay

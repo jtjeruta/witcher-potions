@@ -88,6 +88,30 @@
   </ThingDef>
 
   <ThingDef ParentName="WitcherPotionBase">
+    <defName>WitcherPotion_BlackBlood</defName>
+    <label>black blood</label>
+    <description>A mutagenic draught that taints the drinker's blood. Revenant hypnosis cannot take hold while it flows, and anything that bites or feeds on the drinker is poisoned. Lethal to ordinary humans; only the toxin-hardened can drink it safely.</description>
+    <graphicData>
+      <texPath>Things/Item/WitcherPotion_BlackBlood</texPath>
+    </graphicData>
+    <costList>
+      <MedicineHerbal>3</MedicineHerbal>
+      <SmokeleafLeaves>8</SmokeleafLeaves>
+    </costList>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WitcherPotion_BlackBloodHediff</hediffDef>
+          <severity>1.0</severity>
+        </li>
+        <li Class="WitcherPotions.IngestionOutcomeDoer_ToxicByResistance">
+          <toxicAmount>1.0</toxicAmount>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="WitcherPotionBase">
     <defName>WitcherPotion_WhiteHoney</defName>
     <label>white honey</label>
     <description>An orange witcher elixir that instantly flushes every trace of toxicity from the bloodstream, letting a witcher reset and drink fresh potions. To an ordinary human it is just another mutagenic poison - lethal all the same.</description>
