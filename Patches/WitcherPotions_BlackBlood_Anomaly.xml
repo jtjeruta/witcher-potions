@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="Ludeon.RimWorld.Anomaly">
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[@Name="WitcherPotion_BlackBloodRecipeShared"]/ingredients</xpath>
+    <value>
+      <ingredients>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>WitcherHerb_Hellevine</li>
+            </thingDefs>
+          </filter>
+          <count>2</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>Shard</li>
+            </thingDefs>
+          </filter>
+          <count>1</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>Beer</li>
+            </thingDefs>
+            <customSummary>alcohol</customSummary>
+          </filter>
+          <count>1</count>
+        </li>
+      </ingredients>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[@Name="WitcherPotion_BlackBloodRecipeShared"]/fixedIngredientFilter</xpath>
+    <value>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>WitcherHerb_Hellevine</li>
+          <li>Shard</li>
+          <li>Beer</li>
+        </thingDefs>
+      </fixedIngredientFilter>
+    </value>
+  </Operation>
+
+</Patch>

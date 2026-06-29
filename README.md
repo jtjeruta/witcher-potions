@@ -1,20 +1,37 @@
 # Witcher Potions
 
-Brew and drink witcher potions in **RimWorld**. This companion mod to the Witcher suite adds alchemical draughts crafted from vanilla ingredients — powerful enough to turn the tide of a fight or stitch a witcher back together, but lethally toxic to ordinary humans.
+Brew and drink witcher potions in **RimWorld**. This companion mod to the Witcher suite adds alchemical draughts brewed from **foraged witcher herbs** — powerful enough to turn the tide of a fight or stitch a witcher back together, but lethally toxic to ordinary humans.
 
-> **Standalone.** No DLC required. Works alongside [Witcher Base](../witcher) but does not depend on it.
+> **Standalone.** No DLC required (Anomaly optional for Black Blood shard recipe). Works alongside [Witcher Base](../witcher).
 
 ## What it does
 
-Research **witcher traditions** in [Witcher Base](../witcher), then **witcher alchemy** (also requires vanilla **drug production**), and brew three potions at a **drug lab**:
+Research **witcher traditions** in [Witcher Base](../witcher), then **witcher alchemy** (also requires vanilla **drug production**). Forage wild herbs on the map, gather healroot and beer, then brew at a **campfire** or **drug lab**.
+
+### Forageable herbs
+
+Wild-only plants — cannot be sown in growing zones. Harvest with the Plants skill.
+
+| Herb | Use | Rarity | Biomes |
+|------|-----|--------|--------|
+| **Bryorin** | Combat stimulant (Thunderbolt) | Uncommon | Arid shrubland, desert, temperate forest |
+| **Myrleaf** | Purification (Swallow, White Honey) | Uncommon–rare | Boreal forest, temperate forest; rare in tundra |
+| **Hellevine** | Toxic brews (Black Blood) | Rare | Temperate swamp, tropical swamp, cold bog |
+
+Herbs only appear on **newly generated map tiles** — existing explored areas won't gain them mid-save.
+
+Also gather **herbal medicine** (wild or cultivated healroot), **beer** (or other alcohol in the recipe filter), **insect jelly** (hives), and optionally an Anomaly **shard** for Black Blood.
+
+### Potions
 
 | Potion | Effect | Ingredients |
 |--------|--------|-------------|
-| **Swallow** (green) | Heals injuries over time (~3 hours); auto-tends wounds; prioritizes bleeding wounds | 4 herbal medicine, 8 psychoid leaves |
-| **Thunderbolt** (yellow) | +30% melee damage, +4 hit chance, +4 shooting accuracy, faster aim (~2 hours) | 12 psychoid leaves, 6 smokeleaf leaves |
-| **White Honey** (orange) | Instantly purges all toxicity from a witcher, letting them reset and keep drinking | 5 insect jelly, 6 psychoid leaves |
+| **Swallow** (green) | Heals injuries (~3 h); auto-tends wounds; prioritizes bleeding | 2 herbal medicine, 1 myrleaf, 1 alcohol |
+| **Thunderbolt** (yellow) | +30% melee damage, +4 hit/accuracy, faster aim (~2 h) | 1 herbal medicine, 2 bryorin, 1 alcohol |
+| **White Honey** (orange) | Instantly purges all toxicity from a witcher | 2 myrleaf, 2 insect jelly, 1 alcohol |
+| **Black Blood** | Revenant counter; poisons attackers (~6 h) | 3 hellevine + 1 alcohol *(or 2 hellevine + 1 shard + 1 alcohol with Anomaly)* |
 
-All ingredients are **grown or foraged** — no trade-only materials. Healroot, psychoid, and smokeleaf are sowable; insect jelly is harvested from insect hives / megaspiders. Potions are **drunk** from the item menu like other ingestible drugs.
+Potions are **drunk** from the item menu like other ingestible drugs.
 
 ## Toxicity
 
@@ -30,7 +47,7 @@ There is no addiction or chemical dependency. A witcher's toxic buildup decays s
 ## Compatibility
 
 - Built for **RimWorld 1.6**.
-- Vanilla ingredients only; no DLC required.
+- Core content uses vanilla reagents plus mod herbs; **Anomaly** optional (shard substitutes into Black Blood recipe when installed).
 - Safe to add mid-save. `loadAfter` Witcher Base when both mods are enabled.
 
 ## Credits

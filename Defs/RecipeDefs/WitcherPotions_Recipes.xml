@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Swallow -->
+  <RecipeDef Name="WitcherPotion_SwallowRecipeShared" Abstract="True">
+    <label>make swallow</label>
+    <description>Brew a green witcher healing draught from foraged myrleaf, herbal medicine, and alcohol.</description>
+    <jobString>Brewing swallow.</jobString>
+    <workAmount>900</workAmount>
+    <researchPrerequisite>Witcher_Alchemy</researchPrerequisite>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WitcherHerb_Myrleaf</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Beer</li>
+          </thingDefs>
+          <customSummary>alcohol</customSummary>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineHerbal</li>
+        <li>WitcherHerb_Myrleaf</li>
+        <li>Beer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <WitcherPotion_Swallow>1</WitcherPotion_Swallow>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="WitcherPotion_SwallowRecipeShared">
+    <defName>Make_WitcherPotion_Swallow</defName>
+    <workSkill>Intellectual</workSkill>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="WitcherPotion_SwallowRecipeShared">
+    <defName>Make_WitcherPotion_Swallow_Campfire</defName>
+    <workSkill>Cooking</workSkill>
+    <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <recipeUsers>
+      <li>Campfire</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- Thunderbolt -->
+  <RecipeDef Name="WitcherPotion_ThunderboltRecipeShared" Abstract="True">
+    <label>make thunderbolt</label>
+    <description>Brew a yellow witcher combat tonic from foraged bryorin, herbal medicine, and alcohol.</description>
+    <jobString>Brewing thunderbolt.</jobString>
+    <workAmount>900</workAmount>
+    <researchPrerequisite>Witcher_Alchemy</researchPrerequisite>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WitcherHerb_Bryorin</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Beer</li>
+          </thingDefs>
+          <customSummary>alcohol</customSummary>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineHerbal</li>
+        <li>WitcherHerb_Bryorin</li>
+        <li>Beer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <WitcherPotion_Thunderbolt>1</WitcherPotion_Thunderbolt>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="WitcherPotion_ThunderboltRecipeShared">
+    <defName>Make_WitcherPotion_Thunderbolt</defName>
+    <workSkill>Intellectual</workSkill>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="WitcherPotion_ThunderboltRecipeShared">
+    <defName>Make_WitcherPotion_Thunderbolt_Campfire</defName>
+    <workSkill>Cooking</workSkill>
+    <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <recipeUsers>
+      <li>Campfire</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- White Honey -->
+  <RecipeDef Name="WitcherPotion_WhiteHoneyRecipeShared" Abstract="True">
+    <label>make white honey</label>
+    <description>Brew an orange witcher detox elixir from foraged myrleaf, insect jelly, and alcohol.</description>
+    <jobString>Brewing white honey.</jobString>
+    <workAmount>900</workAmount>
+    <researchPrerequisite>Witcher_Alchemy</researchPrerequisite>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WitcherHerb_Myrleaf</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>InsectJelly</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Beer</li>
+          </thingDefs>
+          <customSummary>alcohol</customSummary>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WitcherHerb_Myrleaf</li>
+        <li>InsectJelly</li>
+        <li>Beer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <WitcherPotion_WhiteHoney>1</WitcherPotion_WhiteHoney>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="WitcherPotion_WhiteHoneyRecipeShared">
+    <defName>Make_WitcherPotion_WhiteHoney</defName>
+    <workSkill>Intellectual</workSkill>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="WitcherPotion_WhiteHoneyRecipeShared">
+    <defName>Make_WitcherPotion_WhiteHoney_Campfire</defName>
+    <workSkill>Cooking</workSkill>
+    <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <recipeUsers>
+      <li>Campfire</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- Black Blood (base: no Anomaly — 3 hellevine) -->
+  <RecipeDef Name="WitcherPotion_BlackBloodRecipeShared" Abstract="True">
+    <label>make black blood</label>
+    <description>Brew a mutagenic witcher draught from foraged hellevine and alcohol.</description>
+    <jobString>Brewing black blood.</jobString>
+    <workAmount>900</workAmount>
+    <researchPrerequisite>Witcher_Alchemy</researchPrerequisite>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WitcherHerb_Hellevine</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Beer</li>
+          </thingDefs>
+          <customSummary>alcohol</customSummary>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WitcherHerb_Hellevine</li>
+        <li>Beer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <WitcherPotion_BlackBlood>1</WitcherPotion_BlackBlood>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="WitcherPotion_BlackBloodRecipeShared">
+    <defName>Make_WitcherPotion_BlackBlood</defName>
+    <workSkill>Intellectual</workSkill>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="WitcherPotion_BlackBloodRecipeShared">
+    <defName>Make_WitcherPotion_BlackBlood_Campfire</defName>
+    <workSkill>Cooking</workSkill>
+    <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <recipeUsers>
+      <li>Campfire</li>
+    </recipeUsers>
+  </RecipeDef>
+
+</Defs>

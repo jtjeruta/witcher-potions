@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef Name="WitcherHerbBase" ParentName="RoughPlantBase" Abstract="True">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>0.03</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>4</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="WitcherHerbBase">
+    <defName>WitcherHerb_Bryorin</defName>
+    <label>bryorin</label>
+    <description>A bitter herb that stimulates the body and sharpens reflexes. Witchers harvest it wild for combat tonics.</description>
+    <graphicData>
+      <texPath>Things/Item/WitcherHerb_Bryorin</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>2.5</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="WitcherHerbBase">
+    <defName>WitcherHerb_Myrleaf</defName>
+    <label>myrleaf</label>
+    <description>A fragrant herb known for drawing impurities from the body. Witchers harvest it wild for healing brews and detox elixirs.</description>
+    <graphicData>
+      <texPath>Things/Item/WitcherHerb_Myrleaf</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>2.8</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="WitcherHerbBase">
+    <defName>WitcherHerb_Hellevine</defName>
+    <label>hellevine</label>
+    <description>A poisonous vine used in dangerous alchemical brews. Witchers harvest it wild for the most mutagenic draughts.</description>
+    <graphicData>
+      <texPath>Things/Item/WitcherHerb_Hellevine</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>3.2</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef Name="WitcherWildHerbPlantBase" ParentName="PlantBase" Abstract="True">
+    <statBases>
+      <MaxHitPoints>85</MaxHitPoints>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <pathCost>14</pathCost>
+    <ingestible />
+    <plant>
+      <fertilityMin>0.5</fertilityMin>
+      <fertilitySensitivity>0.4</fertilitySensitivity>
+      <growDays>8</growDays>
+      <dieIfLeafless>true</dieIfLeafless>
+      <harvestTag>Standard</harvestTag>
+      <harvestAfterGrowth>0.65</harvestAfterGrowth>
+      <topWindExposure>0.1</topWindExposure>
+      <visualSizeRange>0.55~0.95</visualSizeRange>
+      <wildOrder>2</wildOrder>
+      <allowAutoCut>false</allowAutoCut>
+    </plant>
+  </ThingDef>
+
+  <ThingDef ParentName="WitcherWildHerbPlantBase">
+    <defName>Plant_WitcherBryorin</defName>
+    <label>wild bryorin</label>
+    <description>A bitter wild shrub that stimulates the body and sharpens reflexes. Too stubborn to cultivate; witchers forage it where it grows.</description>
+    <graphicData>
+      <texPath>Things/Plant/WitcherBryorin</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <plant>
+      <immatureGraphicPath>Things/Plant/WitcherBryorin_Immature</immatureGraphicPath>
+      <harvestedThingDef>WitcherHerb_Bryorin</harvestedThingDef>
+      <harvestYield>4</harvestYield>
+      <harvestWork>250</harvestWork>
+      <wildClusterRadius>4</wildClusterRadius>
+      <wildClusterWeight>70</wildClusterWeight>
+    </plant>
+  </ThingDef>
+
+  <ThingDef ParentName="WitcherWildHerbPlantBase">
+    <defName>Plant_WitcherMyrleaf</defName>
+    <label>wild myrleaf</label>
+    <description>A fragrant wild herb known for drawing impurities from the body. Too delicate to farm; witchers gather it in colder forests.</description>
+    <graphicData>
+      <texPath>Things/Plant/WitcherMyrleaf</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <plant>
+      <immatureGraphicPath>Things/Plant/WitcherMyrleaf_Immature</immatureGraphicPath>
+      <harvestedThingDef>WitcherHerb_Myrleaf</harvestedThingDef>
+      <harvestYield>3</harvestYield>
+      <harvestWork>300</harvestWork>
+      <wildClusterRadius>4</wildClusterRadius>
+      <wildClusterWeight>60</wildClusterWeight>
+    </plant>
+  </ThingDef>
+
+  <ThingDef ParentName="WitcherWildHerbPlantBase">
+    <defName>Plant_WitcherHellevine</defName>
+    <label>wild hellevine</label>
+    <description>A poisonous wild vine used in dangerous alchemical brews. It thrives in swamps and bogs and cannot be safely cultivated.</description>
+    <graphicData>
+      <texPath>Things/Plant/WitcherHellevine</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <plant>
+      <immatureGraphicPath>Things/Plant/WitcherHellevine_Immature</immatureGraphicPath>
+      <harvestedThingDef>WitcherHerb_Hellevine</harvestedThingDef>
+      <harvestYield>2</harvestYield>
+      <harvestWork>350</harvestWork>
+      <wildClusterRadius>3</wildClusterRadius>
+      <wildClusterWeight>40</wildClusterWeight>
+    </plant>
+  </ThingDef>
+
+</Defs>

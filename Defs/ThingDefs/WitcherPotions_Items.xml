@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef Name="WitcherPotionBase" ParentName="MakeableDrugBase" Abstract="True">
+  <ThingDef Name="WitcherPotionBase" ParentName="DrugBase" Abstract="True">
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.88</drawSize>
@@ -9,7 +9,6 @@
     <rotatable>false</rotatable>
     <stackLimit>25</stackLimit>
     <statBases>
-      <WorkToMake>900</WorkToMake>
       <MarketValue>42</MarketValue>
       <Mass>0.08</Mass>
       <Flammability>0.5</Flammability>
@@ -25,13 +24,6 @@
       <ingestCommandString>Drink {0}</ingestCommandString>
       <ingestReportString>Drinking {0}.</ingestReportString>
     </ingestible>
-    <recipeMaker>
-      <researchPrerequisite>Witcher_Alchemy</researchPrerequisite>
-      <recipeUsers>
-        <li>DrugLab</li>
-      </recipeUsers>
-      <soundWorking>Recipe_Drug</soundWorking>
-    </recipeMaker>
     <comps>
       <li Class="CompProperties_Drug">
         <listOrder>1000</listOrder>
@@ -46,10 +38,6 @@
     <graphicData>
       <texPath>Things/Item/WitcherPotion_Swallow</texPath>
     </graphicData>
-    <costList>
-      <MedicineHerbal>4</MedicineHerbal>
-      <PsychoidLeaves>8</PsychoidLeaves>
-    </costList>
     <ingestible>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
@@ -70,10 +58,6 @@
     <graphicData>
       <texPath>Things/Item/WitcherPotion_Thunderbolt</texPath>
     </graphicData>
-    <costList>
-      <PsychoidLeaves>12</PsychoidLeaves>
-      <SmokeleafLeaves>6</SmokeleafLeaves>
-    </costList>
     <ingestible>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
@@ -94,10 +78,6 @@
     <graphicData>
       <texPath>Things/Item/WitcherPotion_BlackBlood</texPath>
     </graphicData>
-    <costList>
-      <MedicineHerbal>3</MedicineHerbal>
-      <SmokeleafLeaves>8</SmokeleafLeaves>
-    </costList>
     <ingestible>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
@@ -118,10 +98,6 @@
     <graphicData>
       <texPath>Things/Item/WitcherPotion_WhiteHoney</texPath>
     </graphicData>
-    <costList>
-      <InsectJelly>5</InsectJelly>
-      <PsychoidLeaves>6</PsychoidLeaves>
-    </costList>
     <ingestible>
       <outcomeDoers>
         <li Class="WitcherPotions.IngestionOutcomeDoer_WhiteHoney" />

@@ -6,7 +6,36 @@ Internal documentation for contributors. **Spoils gameplay mechanics** — keep 
 
 Three craftable ingestible drugs branch on the drinker's vanilla `ToxicResistance` stat — no hard dependency on Witcher Base. Toxin-hardened drinkers (witchers) can use potions; ordinary humans are poisoned to death. Swallow/Thunderbolt apply a beneficial hediff plus capped toxic buildup; White Honey instead *clears* a witcher's toxicity (and still kills humans). **Black Blood** taints the bloodstream for ~6 h with heavier toxicity than other draughts; Witcher Monster Quests uses the active hediff to block revenant hypnosis and poison melee attackers.
 
+Reagents come from **foraging** mod-added wild herbs (Bryorin, Myrleaf, Hellevine), vanilla healroot/herbal medicine, brewed alcohol, insect jelly, and optionally Anomaly shards. Potions brew at **campfire** (Cooking) or **drug lab** (Intellectual) via explicit `RecipeDef`s — not auto-generated `costList` recipes.
+
 Weapon oils / blade coatings are **deferred** (phase 2). They need a custom weapon comp and are not an Anomaly DLC feature.
+
+## Wild herbs
+
+Defined in `Defs/ThingDefs/WitcherPotions_Herbs.xml`. Each herb is a harvested `ThingDef` plus a wild `Plant_*` def with **no `sowTags`** (forage-only).
+
+Biome spawn weights are patched in `Patches/WitcherPotions_BiomeHerbs.xml`. Herbs only appear on newly generated map tiles.
+
+| Plant | Item | Biomes (weight) |
+|-------|------|-----------------|
+| `Plant_WitcherBryorin` | `WitcherHerb_Bryorin` | AridShrubland 0.05, Desert 0.04, TemperateForest 0.05 |
+| `Plant_WitcherMyrleaf` | `WitcherHerb_Myrleaf` | BorealForest 0.05, TemperateForest 0.05, Tundra 0.02 |
+| `Plant_WitcherHellevine` | `WitcherHerb_Hellevine` | TemperateSwamp 0.03, TropicalSwamp 0.03, ColdBog 0.025 |
+
+## Recipes
+
+`Defs/RecipeDefs/WitcherPotions_Recipes.xml` — **8 recipes** (4 potions × campfire + drug lab). Potion ThingDefs parent `DrugBase` directly (not `MakeableDrugBase`) to avoid duplicate auto-recipes.
+
+| Potion | Ingredients |
+|--------|-------------|
+| Swallow | 2 MedicineHerbal, 1 Myrleaf, 1 alcohol |
+| Thunderbolt | 1 MedicineHerbal, 2 Bryorin, 1 alcohol |
+| White Honey | 2 Myrleaf, 2 InsectJelly, 1 alcohol |
+| Black Blood | 3 Hellevine, 1 alcohol — or **2 Hellevine + 1 Shard + 1 alcohol** when Anomaly loaded (`Patches/WitcherPotions_BlackBlood_Anomaly.xml`) |
+
+Alcohol ingredient uses a `thingDefs` filter (Beer today; extend for wine mods). Campfire recipes use `DrugCookingSpeed` / Cooking; drug lab uses `DrugSynthesisSpeed` / Intellectual. Campfire has vanilla 0.5× work-table speed.
+
+Regenerate herb/plant PNGs: `tools/generate_herb_textures.py` (requires Pillow).
 
 ## Toxicity model
 
@@ -56,13 +85,16 @@ There is intentionally no custom "is this pawn a witcher?" check — `ToxicResis
 About/                 Mod metadata
 Assemblies/            Compiled WitcherPotions.dll
 Defs/
-  ThingDefs/           Drinkable potion items (recipes auto-generated via recipeMaker)
+  ThingDefs/           Potions, wild herbs/plants
+  RecipeDefs/          Campfire + drug lab potion recipes
   HediffDefs/          Buff / heal hediffs
   ResearchProjectDefs/ Witcher Alchemy research
+Patches/               Biome wildPlants, Anomaly Black Blood
 Source/
   WitcherPotions/      Ingestion doers (toxicity / white honey), heal comp, DefOf
   build.sh             Offline build script
-Textures/Things/Item/  Potion bottle icons
+Textures/Things/       Potion bottles, herb items, plant sprites
+tools/                 Texture generation script
 LoadFolders.xml
 ```
 
@@ -85,12 +117,15 @@ Symlink the repo into RimWorld's `Mods/` folder (`Mods/WitcherPotions`) so XML a
 - Vanilla drug textures live in asset bundles — ship custom `texPath` icons under `Textures/`.
 - Use `Graphic_Single` for a single icon file. `Graphic_StackCount`/`Graphic_Random` are `Graphic_Collection` types that scan a *folder* of textures and throw "Collection cannot init: No textures found at path" when pointed at one file.
 - Icons should be square RGBA with a transparent background; an opaque RGB image renders as a solid rectangle.
-- `ParentName="MakeableDrugBase"` for craftable drugs; it auto-generates a `Make_<defName>` recipe from the ThingDef `costList` and its inherited `recipeMaker`. Do NOT also declare an explicit `Make_<defName>` RecipeDef (duplicate def error), and do provide a `costList` (else "has a recipeMaker but no costList or costStuffCount"). Gate the recipe by adding `<recipeMaker><researchPrerequisite>...</researchPrerequisite></recipeMaker>`. **Witcher Alchemy** requires **`Witcher_Traditions`** (Witcher Base) plus vanilla **Drug production**.
+- Potion ThingDefs parent `DrugBase` (not `MakeableDrugBase`). Recipes live in `Defs/RecipeDefs/` — do not add `costList` + `recipeMaker` on potions (duplicate recipe errors).
+- `ParentName="MakeableDrugBase"` auto-generates recipes from `costList`; we use explicit `RecipeDef`s instead with `researchPrerequisite` `Witcher_Alchemy`. **Witcher Alchemy** requires **`Witcher_Traditions`** (Witcher Base) plus vanilla **Drug production**.
 - `CompProperties_Drug` with no chemical keeps them non-addictive.
 
 ## Tuning knobs
 
-- `WorkToMake` on `WitcherPotionBase` (900 — matches Wake-up; drives Drug Lab recipe work time)
+- `workAmount` on potion RecipeDefs (900 — matches Wake-up)
+- Biome `wildPlants` weights in `Patches/WitcherPotions_BiomeHerbs.xml`
+- Plant `harvestYield` / `wildClusterWeight` in `WitcherPotions_Herbs.xml`
 - `toxicAmount` / `safeToxicResistance` / `witcherToxicCeiling` in ThingDef outcome doers
 - `severityPerDay` on `WitcherPotion_Toxin` (1.0 = ~1 day to death)
 - `disappearsAfterTicks` on hediff comps

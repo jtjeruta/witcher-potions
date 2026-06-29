@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Bryorin: uncommon in arid shrubland, desert, temperate forest -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="AridShrubland"]/wildPlants</xpath>
+    <value>
+      <Plant_WitcherBryorin>0.05</Plant_WitcherBryorin>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="Desert"]/wildPlants</xpath>
+    <value>
+      <Plant_WitcherBryorin>0.04</Plant_WitcherBryorin>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="TemperateForest"]/wildPlants</xpath>
+    <value>
+      <Plant_WitcherBryorin>0.05</Plant_WitcherBryorin>
+    </value>
+  </Operation>
+
+  <!-- Myrleaf: uncommon in boreal/temperate forest, rare in tundra -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="BorealForest"]/wildPlants</xpath>
+    <value>
+      <Plant_WitcherMyrleaf>0.05</Plant_WitcherMyrleaf>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="TemperateForest"]/wildPlants</xpath>
+    <value>
+      <Plant_WitcherMyrleaf>0.05</Plant_WitcherMyrleaf>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="Tundra"]/wildPlants</xpath>
+    <value>
+      <Plant_WitcherMyrleaf>0.02</Plant_WitcherMyrleaf>
+    </value>
+  </Operation>
+
+  <!-- Hellevine: rare in swamps and cold bog -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="TemperateSwamp"]/wildPlants</xpath>
+    <value>
+      <Plant_WitcherHellevine>0.03</Plant_WitcherHellevine>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="TropicalSwamp"]/wildPlants</xpath>
+    <value>
+      <Plant_WitcherHellevine>0.03</Plant_WitcherHellevine>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="ColdBog"]/wildPlants</xpath>
+    <value>
+      <Plant_WitcherHellevine>0.025</Plant_WitcherHellevine>
+    </value>
+  </Operation>
+
+</Patch>
