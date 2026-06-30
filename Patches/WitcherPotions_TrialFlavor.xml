@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName="Witcher_TrialOfGrasses"]/description</xpath>
+    <value>
+      <description>The first and most brutal of the witcher trials. Subjects are dosed with an alchemical brew of foraged myrleaf and bryorin, healroot, and strong spirits. The mutagens that survive the immune response remake the body: dense connective tissue, accelerated healing, sharper night vision. Only about three in ten endure the fever.
+
+Once researched, this trial becomes available as an operation in the Health tab.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName="Witcher_TrialOfDreams"]/description</xpath>
+    <value>
+      <description>A second trial reserved for those who survived the grasses. Subjects are dosed with a witcher combat tonic laced with healroot and spirits, then guided through nightmare visions while their nervous system is rewired. About seven in ten survive. Survivors gain pain resistance, emotional flatness, and sharpened reflexes.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName="Witcher_AdditionalMutagens"]/description</xpath>
+    <value>
+      <description>An experimental second dose of mutagens, administered to a master witcher. The brew combines witcher potions with foraged hellevine and pushes existing gifts to their extreme tier — but only about one in ten survive. Those who endure become faster, tougher, and harder to kill than any witcher before them.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="Witcher_ConductTrialOfGrasses"]/description</xpath>
+    <value>
+      <description>Administer the trial of grasses using foraged myrleaf and bryorin, herbal medicine, and alcohol. The mutagens will induce a painful fever lasting one or two days. About three in ten survive; those who endure are reborn with witcher gifts.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="Witcher_ConductTrialOfDreams"]/description</xpath>
+    <value>
+      <description>Administer the trial of dreams to a witcher initiate using thunderbolt, herbal medicine, and alcohol. About seven in ten survive. Survivors gain pain resistance, emotional dullness, and a rewired nervous system.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="Witcher_ConductAdditionalMutagens"]/description</xpath>
+    <value>
+      <description>Administer an additional dose of mutagens to a master witcher using swallow, thunderbolt, and foraged hellevine. About one in ten survive. Those who endure have their existing gifts pushed to their extreme tier.</description>
+    </value>
+  </Operation>
+
+</Patch>

@@ -37,6 +37,22 @@ Alcohol ingredient uses a `thingDefs` filter (Beer today; extend for wine mods).
 
 Regenerate herb/plant PNGs: `tools/generate_herb_textures.py` (requires Pillow).
 
+## Witcher Base trial patches
+
+When Witcher Potions is loaded alongside Witcher Base, trial surgery ingredients are replaced via XML patches (Witcher Base alone keeps vanilla psychoid/hops/smokeleaf costs).
+
+| Trial (RecipeDef) | Ingredients |
+|-------------------|-------------|
+| `Witcher_ConductTrialOfGrasses` | 3 MedicineHerbal, 5 Myrleaf, 2 Bryorin, 1 alcohol |
+| `Witcher_ConductTrialOfDreams` | 3 MedicineHerbal, 2 WitcherPotion_Thunderbolt, 1 alcohol |
+| `Witcher_ConductAdditionalMutagens` | 2 WitcherPotion_Swallow, 2 WitcherPotion_Thunderbolt, 3 Hellevine |
+
+Files:
+- `Patches/WitcherPotions_TrialRecipes.xml` — ingredients + `fixedIngredientFilter`
+- `Patches/WitcherPotions_TrialFlavor.xml` — research and operation descriptions in Witcher Base defs
+
+Progression: Grasses (raw forage) → alchemy + brew → Dreams (thunderbolt) → Mutagens (potions + hellevine).
+
 ## Toxicity model
 
 `IngestionOutcomeDoer_ToxicByResistance` runs on drink and branches on `ToxicResistance` vs `safeToxicResistance` (default 0.35):
@@ -89,7 +105,7 @@ Defs/
   RecipeDefs/          Campfire + drug lab potion recipes
   HediffDefs/          Buff / heal hediffs
   ResearchProjectDefs/ Witcher Alchemy research
-Patches/               Biome wildPlants, Anomaly Black Blood
+Patches/               Biome wildPlants, Anomaly Black Blood, trial recipes/flavor
 Source/
   WitcherPotions/      Ingestion doers (toxicity / white honey), heal comp, DefOf
   build.sh             Offline build script
@@ -133,6 +149,7 @@ Symlink the repo into RimWorld's `Mods/` folder (`Mods/WitcherPotions`) so XML a
 - `workAmount` on potion RecipeDefs (900 — matches Wake-up)
 - Biome `wildPlants` weights in `Patches/WitcherPotions_BiomeHerbs.xml`
 - Plant `harvestYield` / `wildClusterWeight` in `WitcherPotions_Herbs.xml`
+- Trial ingredient counts in `Patches/WitcherPotions_TrialRecipes.xml`
 - `toxicAmount` / `safeToxicResistance` / `witcherToxicCeiling` in ThingDef outcome doers
 - `severityPerDay` on `WitcherPotion_Toxin` (1.0 = ~1 day to death)
 - `disappearsAfterTicks` on hediff comps

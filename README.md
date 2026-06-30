@@ -33,6 +33,18 @@ Also gather **herbal medicine** (wild or cultivated healroot), **beer** (or othe
 
 Potions are **drunk** from the item menu like other ingestible drugs.
 
+### Witcher trials (with Witcher Base)
+
+When both mods are enabled, trial operations in the Health tab use foraged herbs and brewed potions instead of vanilla psychoid and smokeleaf:
+
+| Trial | Ingredients |
+|-------|-------------|
+| **Trial of Grasses** | 3 herbal medicine, 5 myrleaf, 2 bryorin, 1 alcohol |
+| **Trial of Dreams** | 3 herbal medicine, 2 thunderbolt, 1 alcohol |
+| **Additional Mutagens** | 2 swallow, 2 thunderbolt, 3 hellevine |
+
+Typical loop: forage herbs → conduct Grasses on a child → research witcher alchemy and brew potions → Dreams on the initiate → forage hellevine from swamps for Additional Mutagens on a master witcher.
+
 ## Toxicity
 
 Witcher potions are mutagenic poison. Whether they help or kill depends entirely on the drinker's **toxic resistance** stat:

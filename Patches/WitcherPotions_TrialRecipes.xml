@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Trial of Grasses: 3 medicine, 5 myrleaf, 2 bryorin, 1 alcohol -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="Witcher_ConductTrialOfGrasses"]/ingredients</xpath>
+    <value>
+      <ingredients>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>MedicineHerbal</li>
+            </thingDefs>
+          </filter>
+          <count>3</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>WitcherHerb_Myrleaf</li>
+            </thingDefs>
+          </filter>
+          <count>5</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>WitcherHerb_Bryorin</li>
+            </thingDefs>
+          </filter>
+          <count>2</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>Beer</li>
+            </thingDefs>
+            <customSummary>alcohol</customSummary>
+          </filter>
+          <count>1</count>
+        </li>
+      </ingredients>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="Witcher_ConductTrialOfGrasses"]/fixedIngredientFilter</xpath>
+    <value>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>MedicineHerbal</li>
+          <li>WitcherHerb_Myrleaf</li>
+          <li>WitcherHerb_Bryorin</li>
+          <li>Beer</li>
+        </thingDefs>
+      </fixedIngredientFilter>
+    </value>
+  </Operation>
+
+  <!-- Trial of Dreams: 3 medicine, 2 thunderbolt, 1 alcohol -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="Witcher_ConductTrialOfDreams"]/ingredients</xpath>
+    <value>
+      <ingredients>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>MedicineHerbal</li>
+            </thingDefs>
+          </filter>
+          <count>3</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>WitcherPotion_Thunderbolt</li>
+            </thingDefs>
+          </filter>
+          <count>2</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>Beer</li>
+            </thingDefs>
+            <customSummary>alcohol</customSummary>
+          </filter>
+          <count>1</count>
+        </li>
+      </ingredients>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="Witcher_ConductTrialOfDreams"]/fixedIngredientFilter</xpath>
+    <value>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>MedicineHerbal</li>
+          <li>WitcherPotion_Thunderbolt</li>
+          <li>Beer</li>
+        </thingDefs>
+      </fixedIngredientFilter>
+    </value>
+  </Operation>
+
+  <!-- Additional Mutagens: 2 swallow, 2 thunderbolt, 3 hellevine -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="Witcher_ConductAdditionalMutagens"]/ingredients</xpath>
+    <value>
+      <ingredients>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>WitcherPotion_Swallow</li>
+            </thingDefs>
+          </filter>
+          <count>2</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>WitcherPotion_Thunderbolt</li>
+            </thingDefs>
+          </filter>
+          <count>2</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>WitcherHerb_Hellevine</li>
+            </thingDefs>
+          </filter>
+          <count>3</count>
+        </li>
+      </ingredients>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="Witcher_ConductAdditionalMutagens"]/fixedIngredientFilter</xpath>
+    <value>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>WitcherPotion_Swallow</li>
+          <li>WitcherPotion_Thunderbolt</li>
+          <li>WitcherHerb_Hellevine</li>
+        </thingDefs>
+      </fixedIngredientFilter>
+    </value>
+  </Operation>
+
+</Patch>
