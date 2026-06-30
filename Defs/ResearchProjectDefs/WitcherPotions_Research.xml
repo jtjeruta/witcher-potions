@@ -4,7 +4,13 @@
   <ResearchProjectDef>
     <defName>Witcher_Alchemy</defName>
     <label>witcher alchemy</label>
-    <description>Learn to brew witcher potions from common medicinal reagents. The draughts mend wounds or sharpen combat reflexes, but their toxicity is lethal to anyone without strong poison resistance.</description>
+    <description>Learn to brew witcher potions from foraged herbs and medicinal reagents. The draughts mend wounds or sharpen combat reflexes, but their toxicity is lethal to anyone without strong poison resistance.
+
+Later trials consume brewed potions: the trial of dreams needs thunderbolt; additional mutagens needs swallow and thunderbolt.</description>
+    <descriptionHyperlinks>
+      <ThingDef>WitcherPotion_Swallow</ThingDef>
+      <ThingDef>WitcherPotion_Thunderbolt</ThingDef>
+    </descriptionHyperlinks>
     <techLevel>Industrial</techLevel>
     <baseCost>400</baseCost>
     <tab>Witcher</tab>

@@ -45,6 +45,8 @@ When both mods are enabled, trial operations in the Health tab use foraged herbs
 
 Typical loop: forage herbs → conduct Grasses on a child → research witcher alchemy and brew potions → Dreams on the initiate → forage hellevine from swamps for Additional Mutagens on a master witcher.
 
+Trial ingredient counts are listed on each trial's **research project** in the Witcher tab — click the operation link in the description to open the full bill. The Health tab only shows an operation once you have the ingredients on hand (vanilla behavior for drug reagents like beer and potions).
+
 ## Toxicity
 
 Witcher potions are mutagenic poison. Whether they help or kill depends entirely on the drinker's **toxic resistance** stat:

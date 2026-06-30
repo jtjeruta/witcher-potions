@@ -6,21 +6,62 @@
     <value>
       <description>The first and most brutal of the witcher trials. Subjects are dosed with an alchemical brew of foraged myrleaf and bryorin, healroot, and strong spirits. The mutagens that survive the immune response remake the body: dense connective tissue, accelerated healing, sharper night vision. Only about three in ten endure the fever.
 
-Once researched, this trial becomes available as an operation in the Health tab.</description>
+Requirements: 3 herbal medicine, 5 myrleaf, 2 bryorin, 1 alcohol. Once researched, conduct from a child's Health tab → Operations → Add bill.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName="Witcher_TrialOfGrasses"]/descriptionHyperlinks</xpath>
+    <value>
+      <descriptionHyperlinks>
+        <RecipeDef>Witcher_ConductTrialOfGrasses</RecipeDef>
+        <ThingDef>MedicineHerbal</ThingDef>
+        <ThingDef>WitcherHerb_Myrleaf</ThingDef>
+        <ThingDef>WitcherHerb_Bryorin</ThingDef>
+        <ThingDef>Beer</ThingDef>
+      </descriptionHyperlinks>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
     <xpath>/Defs/ResearchProjectDef[defName="Witcher_TrialOfDreams"]/description</xpath>
     <value>
-      <description>A second trial reserved for those who survived the grasses. Subjects are dosed with a witcher combat tonic laced with healroot and spirits, then guided through nightmare visions while their nervous system is rewired. About seven in ten survive. Survivors gain pain resistance, emotional flatness, and sharpened reflexes.</description>
+      <description>A second trial reserved for those who survived the grasses. Subjects are dosed with a witcher combat tonic laced with healroot and spirits, then guided through nightmare visions while their nervous system is rewired. About seven in ten survive. Survivors gain pain resistance, emotional flatness, and sharpened reflexes.
+
+Requirements: 3 herbal medicine, 2 thunderbolt, 1 alcohol. Brew thunderbolt first (witcher alchemy). Once researched, conduct from a witcher initiate's Health tab → Operations → Add bill.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName="Witcher_TrialOfDreams"]/descriptionHyperlinks</xpath>
+    <value>
+      <descriptionHyperlinks>
+        <RecipeDef>Witcher_ConductTrialOfDreams</RecipeDef>
+        <ThingDef>MedicineHerbal</ThingDef>
+        <ThingDef>WitcherPotion_Thunderbolt</ThingDef>
+        <ThingDef>Beer</ThingDef>
+      </descriptionHyperlinks>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
     <xpath>/Defs/ResearchProjectDef[defName="Witcher_AdditionalMutagens"]/description</xpath>
     <value>
-      <description>An experimental second dose of mutagens, administered to a master witcher. The brew combines witcher potions with foraged hellevine and pushes existing gifts to their extreme tier — but only about one in ten survive. Those who endure become faster, tougher, and harder to kill than any witcher before them.</description>
+      <description>An experimental second dose of mutagens, administered to a master witcher. The brew combines witcher potions with foraged hellevine and pushes existing gifts to their extreme tier — but only about one in ten survive. Those who endure become faster, tougher, and harder to kill than any witcher before them.
+
+Requirements: 2 swallow, 2 thunderbolt, 3 hellevine. Brew potions first (witcher alchemy). Once researched, conduct from a master witcher's Health tab → Operations → Add bill.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName="Witcher_AdditionalMutagens"]/descriptionHyperlinks</xpath>
+    <value>
+      <descriptionHyperlinks>
+        <RecipeDef>Witcher_ConductAdditionalMutagens</RecipeDef>
+        <ThingDef>WitcherPotion_Swallow</ThingDef>
+        <ThingDef>WitcherPotion_Thunderbolt</ThingDef>
+        <ThingDef>WitcherHerb_Hellevine</ThingDef>
+      </descriptionHyperlinks>
     </value>
   </Operation>
 

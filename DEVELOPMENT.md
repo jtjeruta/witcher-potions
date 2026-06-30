@@ -49,9 +49,15 @@ When Witcher Potions is loaded alongside Witcher Base, trial surgery ingredients
 
 Files:
 - `Patches/WitcherPotions_TrialRecipes.xml` — ingredients + `fixedIngredientFilter`
-- `Patches/WitcherPotions_TrialFlavor.xml` — research and operation descriptions in Witcher Base defs
+- `Patches/WitcherPotions_TrialFlavor.xml` — research/operation descriptions and `descriptionHyperlinks`
 
 Progression: Grasses (raw forage) → alchemy + brew → Dreams (thunderbolt) → Mutagens (potions + hellevine).
+
+### Trial ingredient visibility
+
+Vanilla `HealthCardUtility` hides surgery bills when **any missing ingredient is a drug** (`IsDrug` — beer, potions, psychite tea, etc.). Trials also inherit `dontShowIfAnyIngredientMissing` from `SurgeryFlesh`; Witcher Base sets `false` on `Witcher_TrialBase` so missing herbs/medicine show as greyed options with `(Missing …)` labels instead.
+
+Players discover requirements via trial **research projects**: `description` (visible before and after research) and clickable `descriptionHyperlinks` to the trial `RecipeDef` and reagent `ThingDef`s. Potions patches overwrite Base's vanilla psychoid/hops text when both mods load. (`descriptionDiscovered` is not a valid `ResearchProjectDef` field in 1.6.)
 
 ## Toxicity model
 
