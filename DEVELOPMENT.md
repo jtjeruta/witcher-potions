@@ -98,6 +98,13 @@ tools/                 Texture generation script
 LoadFolders.xml
 ```
 
+## Steam publish
+
+`_PublisherPlus.xml` excludes dev-only paths (`.git`, `Source`, `tools`, `DEVELOPMENT.md`, etc.). A correct Workshop upload is **~350 KB**.
+
+- Item/plant icons: 256×256 RGBA, `Graphic_Single`
+- Regenerate herb placeholders locally via `tools/generate_herb_textures.py` (not uploaded)
+
 ## Building
 
 ```bash
