@@ -18,7 +18,7 @@ Requirements: 3 herbal medicine, 5 myrleaf, 2 bryorin, 1 alcohol. Once researche
         <ThingDef>MedicineHerbal</ThingDef>
         <ThingDef>WitcherHerb_Myrleaf</ThingDef>
         <ThingDef>WitcherHerb_Bryorin</ThingDef>
-        <ThingDef>Beer</ThingDef>
+        <ChemicalDef>Alcohol</ChemicalDef>
       </descriptionHyperlinks>
     </value>
   </Operation>
@@ -39,7 +39,7 @@ Requirements: 3 herbal medicine, 2 thunderbolt, 1 alcohol. Brew thunderbolt firs
         <RecipeDef>Witcher_ConductTrialOfDreams</RecipeDef>
         <ThingDef>MedicineHerbal</ThingDef>
         <ThingDef>WitcherPotion_Thunderbolt</ThingDef>
-        <ThingDef>Beer</ThingDef>
+        <ChemicalDef>Alcohol</ChemicalDef>
       </descriptionHyperlinks>
     </value>
   </Operation>

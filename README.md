@@ -6,7 +6,7 @@ Brew and drink witcher potions in **RimWorld**. This companion mod to the Witche
 
 ## What it does
 
-Research **witcher traditions** in [Witcher Base](../witcher), then **witcher alchemy** (also requires vanilla **drug production**). Forage wild herbs on the map, gather healroot and beer, then brew at a **campfire** or **drug lab**.
+Research **witcher traditions** in [Witcher Base](../witcher), then **witcher alchemy** (also requires vanilla **drug production**). Forage wild herbs on the map, gather healroot and alcohol, then brew at a **campfire** or **drug lab** (x1 or **x4** batch bills per potion).
 
 ### Forageable herbs
 
@@ -20,7 +20,7 @@ Wild-only plants — cannot be sown in growing zones. Harvest with the Plants sk
 
 Herbs only appear on **newly generated map tiles** — existing explored areas won't gain them mid-save.
 
-Also gather **herbal medicine** (wild or cultivated healroot), **beer** (or other alcohol in the recipe filter), **insect jelly** (hives), and optionally an Anomaly **shard** for Black Blood.
+Also gather **herbal medicine** (wild or cultivated healroot), **any drink with the Alcohol chemical** (beer, wine, mead from other mods), **insect jelly** (hives), and optionally an Anomaly **shard** for Black Blood.
 
 ### Potions
 

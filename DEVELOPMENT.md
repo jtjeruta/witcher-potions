@@ -24,7 +24,7 @@ Biome spawn weights are patched in `Patches/WitcherPotions_BiomeHerbs.xml`. Herb
 
 ## Recipes
 
-`Defs/RecipeDefs/WitcherPotions_Recipes.xml` — **8 recipes** (4 potions × campfire + drug lab). Potion ThingDefs parent `DrugBase` directly (not `MakeableDrugBase`) to avoid duplicate auto-recipes.
+`Defs/RecipeDefs/WitcherPotions_Recipes.xml` — **16 recipes** (4 potions × campfire + drug lab × x1 + x4). Potion ThingDefs parent `DrugBase` directly (not `MakeableDrugBase`) to avoid duplicate auto-recipes.
 
 | Potion | Ingredients |
 |--------|-------------|
@@ -33,7 +33,9 @@ Biome spawn weights are patched in `Patches/WitcherPotions_BiomeHerbs.xml`. Herb
 | White Honey | 2 Myrleaf, 2 InsectJelly, 1 alcohol |
 | Black Blood | 3 Hellevine, 1 alcohol — or **2 Hellevine + 1 Shard + 1 alcohol** when Anomaly loaded (`Patches/WitcherPotions_BlackBlood_Anomaly.xml`) |
 
-Alcohol ingredient uses a `thingDefs` filter (Beer today; extend for wine mods). Campfire recipes use `DrugCookingSpeed` / Cooking; drug lab uses `DrugSynthesisSpeed` / Intellectual. Campfire has vanilla 0.5× work-table speed.
+Alcohol ingredient XML uses `Beer` as seed plus `<customSummary>alcohol</customSummary>`. At startup, `AlcoholIngredientExpander` expands those filters to every `ThingDef` whose `CompProperties_Drug.chemical` is `Alcohol` (MO wine, VFE mead, etc.). Witcher potions are excluded (no chemical on their drug comp). Campfire recipes use `DrugCookingSpeed` / Cooking; drug lab uses `DrugSynthesisSpeed` / Intellectual. Campfire has vanilla 0.5× work-table speed.
+
+x4 batch recipes (`Make_WitcherPotion_*_x4`, `Make_WitcherPotion_*_Campfire_x4`): 4× ingredients and products, `workAmount` 1200 (vs 900 for x1) — one kettle, four bottles.
 
 Regenerate herb/plant PNGs: `tools/generate_herb_textures.py` (requires Pillow).
 
@@ -113,7 +115,7 @@ Defs/
   ResearchProjectDefs/ Witcher Alchemy research
 Patches/               Biome wildPlants, Anomaly Black Blood, trial recipes/flavor
 Source/
-  WitcherPotions/      Ingestion doers (toxicity / white honey), heal comp, DefOf
+  WitcherPotions/      Ingestion doers, heal comp, alcohol filter expander, DefOf
   build.sh             Offline build script
 Textures/Things/       Potion bottles, herb items, plant sprites
 tools/                 Texture generation script
@@ -152,7 +154,7 @@ Symlink the repo into RimWorld's `Mods/` folder (`Mods/WitcherPotions`) so XML a
 
 ## Tuning knobs
 
-- `workAmount` on potion RecipeDefs (900 — matches Wake-up)
+- `workAmount` on potion RecipeDefs (900 x1, 1200 x4 batch)
 - Biome `wildPlants` weights in `Patches/WitcherPotions_BiomeHerbs.xml`
 - Plant `harvestYield` / `wildClusterWeight` in `WitcherPotions_Herbs.xml`
 - Trial ingredient counts in `Patches/WitcherPotions_TrialRecipes.xml`
