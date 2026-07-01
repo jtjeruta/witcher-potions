@@ -29,7 +29,7 @@ Also gather **herbal medicine** (wild or cultivated healroot), **any drink with 
 | **Swallow** (green) | Heals injuries (~3 h); auto-tends wounds; prioritizes bleeding | 2 herbal medicine, 1 myrleaf, 1 alcohol |
 | **Thunderbolt** (yellow) | +30% melee damage, +4 hit/accuracy, faster aim (~2 h) | 1 herbal medicine, 2 bryorin, 1 alcohol |
 | **White Honey** (orange) | Instantly purges all toxicity from a witcher | 2 myrleaf, 2 insect jelly, 1 alcohol |
-| **Black Blood** | Revenant counter; poisons attackers (~6 h) | 3 hellevine + 1 alcohol *(or 2 hellevine + 1 shard + 1 alcohol with Anomaly)* |
+| **Black Blood** | Devourers regurgitate; sanguophages burn (~6 h) | 3 hellevine + 1 alcohol *(or 2 hellevine + 1 shard + 1 alcohol with Anomaly)* |
 
 Potions are **drunk** from the item menu like other ingestible drugs.
 

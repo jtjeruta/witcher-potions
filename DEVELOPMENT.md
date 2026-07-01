@@ -4,7 +4,7 @@ Internal documentation for contributors. **Spoils gameplay mechanics** — keep 
 
 ## Core design
 
-Three craftable ingestible drugs branch on the drinker's vanilla `ToxicResistance` stat — no hard dependency on Witcher Base. Toxin-hardened drinkers (witchers) can use potions; ordinary humans are poisoned to death. Swallow/Thunderbolt apply a beneficial hediff plus capped toxic buildup; White Honey instead *clears* a witcher's toxicity (and still kills humans). **Black Blood** taints the bloodstream for ~6 h with heavier toxicity than other draughts; Witcher Monster Quests uses the active hediff to block revenant hypnosis and poison melee attackers.
+Three craftable ingestible drugs branch on the drinker's vanilla `ToxicResistance` stat — no hard dependency on Witcher Base. Toxin-hardened drinkers (witchers) can use potions; ordinary humans are poisoned to death. Swallow/Thunderbolt apply a beneficial hediff plus capped toxic buildup; White Honey instead *clears* a witcher's toxicity (and still kills humans). **Black Blood** taints the bloodstream for ~6 h with heavier toxicity than other draughts; while active, devourers regurgitate the drinker (Anomaly), sanguophages that bite or feed catch fire (Biotech, including VRE subxenotypes via `GeneUtility.IsBloodfeeder`). Witcher Monster Quests optionally adds revenant hypnosis block + generic melee toxic retaliation when both mods load.
 
 Reagents come from **foraging** mod-added wild herbs (Bryorin, Myrleaf, Hellevine), vanilla healroot/herbal medicine, brewed alcohol, insect jelly, and optionally Anomaly shards. Potions brew at **campfire** (Cooking) or **drug lab** (Intellectual) via explicit `RecipeDef`s — not auto-generated `costList` recipes.
 
@@ -98,7 +98,7 @@ There is intentionally no custom "is this pawn a witcher?" check — `ToxicResis
 |--------|----------|----------|
 | `WitcherPotion_SwallowHediff` (swallow, green) | 7500 ticks (~3 h) | `HediffComp_HealOverTime` on apply + every 120 ticks: auto-tends all injuries (self-tend quality, no medicine); heals 0.6 severity on worst injury, bleeding wounds first |
 | `WitcherPotion_ThunderboltHediff` (thunderbolt, yellow) | 5000 ticks (~2 h) | Stat buffs only (no custom C#) |
-| `WitcherPotion_BlackBloodHediff` (black blood) | 15000 ticks (~6 h) | Revenant counter; contact poison handled in Witcher Monster Quests via `BlackBloodUtility.HasBlackBlood`; `toxicAmount` 1.0 on drink (other potions 0.6) |
+| `WitcherPotion_BlackBloodHediff` (black blood) | 15000 ticks (~6 h) | `HediffComp_BlackBloodDevourerRelease` on apply releases from devourers (Anomaly); Harmony burns bloodfeeders on melee + Bloodfeed (Biotech); `toxicAmount` 1.0 on drink (other potions 0.6). Monster Quests optionally adds revenant block + melee toxic when loaded |
 | `WitcherPotion_Toxin` (lethal, humans only) | ~1 in-game day to death | Vanilla `HediffComp_SeverityPerDay` (1.0/day) ramps to `lethalSeverity = 1.0`; staged decline (spreading → toxic shock → dying), no cure |
 
 `HediffComp_HealOverTime` auto-tends all `Hediff_Injury` wounds while Swallow is active (immediate on drink, then each heal tick). Tend quality uses self-tend via `TendUtility.CalculateBaseTendQuality` — no colonist job or medicine required. Infections and other non-injury tendables are unaffected.
@@ -115,8 +115,8 @@ Defs/
   ResearchProjectDefs/ Witcher Alchemy research
 Patches/               Biome wildPlants, Anomaly Black Blood, trial recipes/flavor
 Source/
-  WitcherPotions/      Ingestion doers, heal comp, alcohol filter expander, DefOf
-  build.sh             Offline build script
+  WitcherPotions/      Ingestion doers, heal comp, alcohol filter expander, BlackBlood patches, DefOf
+  build.sh             dotnet build (Lib.Harmony compile ref; runtime Harmony from mod manager)
 Textures/Things/       Potion bottles, herb items, plant sprites
 tools/                 Texture generation script
 LoadFolders.xml

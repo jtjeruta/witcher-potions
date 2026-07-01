@@ -5,6 +5,12 @@ namespace WitcherPotions
 {
     public static class BlackBloodUtility
     {
+        public static bool AnomalyActive =>
+            ModsConfig.IsActive("Ludeon.RimWorld.Anomaly");
+
+        public static bool BiotechActive =>
+            ModsConfig.IsActive("Ludeon.RimWorld.Biotech");
+
         public static bool HasBlackBlood(Pawn pawn)
         {
             if (pawn?.health?.hediffSet == null)

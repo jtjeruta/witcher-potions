@@ -74,7 +74,7 @@
   <ThingDef ParentName="WitcherPotionBase">
     <defName>WitcherPotion_BlackBlood</defName>
     <label>black blood</label>
-    <description>A mutagenic draught that taints the drinker's blood. Revenant hypnosis cannot take hold while it flows, and anything that bites or feeds on the drinker is poisoned. Lethal to ordinary humans; only the toxin-hardened can drink it safely.</description>
+    <description>A mutagenic draught that taints the drinker's blood. Devourers regurgitate anyone so poisoned; sanguophages that bite or feed on the drinker catch fire. Lethal to ordinary humans; only the toxin-hardened can drink it safely.</description>
     <graphicData>
       <texPath>Things/Item/WitcherPotion_BlackBlood</texPath>
     </graphicData>

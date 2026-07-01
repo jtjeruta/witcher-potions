@@ -69,11 +69,12 @@
   <HediffDef>
     <defName>WitcherPotion_BlackBloodHediff</defName>
     <label>black blood</label>
-    <description>Mutagenic toxins saturate the bloodstream. Revenant hypnosis cannot bind to a mind so poisoned, and anything that wounds the drinker risks the taint.</description>
+    <description>Mutagenic toxins saturate the bloodstream. Devourers cannot keep tainted prey down; sanguophages that bite or feed catch fire. Anything else that wounds the drinker risks the taint.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.45, 0.08, 0.08)</defaultLabelColor>
     <isBad>false</isBad>
     <comps>
+      <li Class="WitcherPotions.BlackBlood.HediffCompProperties_BlackBloodDevourerRelease" />
       <li Class="HediffCompProperties_Disappears">
         <disappearsAfterTicks>15000</disappearsAfterTicks>
         <showRemainingTime>true</showRemainingTime>
